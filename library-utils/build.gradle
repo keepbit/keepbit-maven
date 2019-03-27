@@ -26,13 +26,9 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
 }
 
-//项目主页
-def siteUrl ='https://github.com/keepbit/keepbit-maven'
-//项目的版本控制地址
 def gitUrl ='https://github.com/keepbit/keepbit-maven.git'
-// 这里是groupId ,必须填写 一般填你唯一的包名，对应com.squareup.okhttp3:okhttp:3.4.1中的com.squareup.okhttp3部分
+def siteUrl ='https://github.com/keepbit/keepbit-maven'
 group = "com.keepbit.android.lib"
-// 发布到JCenter上的项目版本号
 version = "1.0.0.0"
 
 install {
@@ -40,7 +36,7 @@ install {
         pom {
             project {
                 packaging 'aar'
-                name 'utils' // 项目描述
+                name 'utils'
                 url siteUrl
                 licenses {
                     license {
@@ -50,9 +46,9 @@ install {
                 }
                 developers {
                     developer {
-                        id 'wulifei' // 填写开发者的一些基本信息
-                        name 'wulifei' // 填写开发者的一些基本信息
-                        email '13857442843.bit@gmail.com' // 填写开发者的一些基本信息
+                        id 'wulifei'
+                        name 'wulifei'
+                        email '13857442843.bit@gmail.com'
                     }
                 }
                 scm {
@@ -92,7 +88,6 @@ artifacts {
     archives sourcesJar
 }
 
-//加载资源
 Properties properties = new Properties()
 InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream()
 properties.load( inputStream )
@@ -103,7 +98,7 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = "android"
-        name = "library-utils" // 发布到JCenter上的项目名字，必须填写，对应com.squareup.okhttp3:okhttp:3.4.1中的okhttp
+        name = "library-utils"
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
