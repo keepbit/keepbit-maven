@@ -68,6 +68,20 @@
 
                 android:text="未知" />
         </LinearLayout>
+
+        <View
+            android:layout_height="32dp"
+            android:layout_width="0dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="#FF646456"
+            android:gravity="center"
+            android:textColor="#FFFFFFFF"
+            android:id="@+id/btn"
+
+            android:text="Button"/>
     </LinearLayout>
 </ScrollView>
 

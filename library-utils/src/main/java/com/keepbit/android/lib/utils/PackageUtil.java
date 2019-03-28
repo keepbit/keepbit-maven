@@ -73,6 +73,55 @@ public class PackageUtil {
     /***
      * */
     @SuppressLint("PackageManagerGetSignatures")
+    public static String getPackageSignature(@NonNull Context context, @NonNull String packageName) {
+        if (0 >= packageName.length()) {
+            return null;
+        }
+        PackageManager manager = getPackageManager(context);
+        if (null == manager) {
+            return null;
+        }
+        PackageInfo packageInfo = null;
+        try {
+            packageInfo = manager.getPackageInfo(packageName, PackageManager.GET_SIGNATURES);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (null == packageInfo) {
+            return null;
+        }
+        Signature signature = packageInfo.signatures[0];
+        return signature.toCharsString();
+    }
+
+    /***
+     * */
+    @SuppressLint("PackageManagerGetSignatures")
+    public static String getPackageSignature(@NonNull Context context) {
+        String packageName = context.getPackageName();
+        if (0 >= packageName.length()) {
+            return null;
+        }
+        PackageManager manager = getPackageManager(context);
+        if (null == manager) {
+            return null;
+        }
+        PackageInfo packageInfo = null;
+        try {
+            packageInfo = manager.getPackageInfo(packageName, PackageManager.GET_SIGNATURES);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (null == packageInfo) {
+            return null;
+        }
+        Signature signature = packageInfo.signatures[0];
+        return signature.toCharsString();
+    }
+
+    /***
+     * */
+    @SuppressLint("PackageManagerGetSignatures")
     public static String getPackageSHA1(@NonNull Context context, @NonNull String packageName) {
         if (0 >= packageName.length()) {
             return null;

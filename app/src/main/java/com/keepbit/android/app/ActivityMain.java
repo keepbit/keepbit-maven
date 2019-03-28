@@ -1,10 +1,12 @@
 package com.keepbit.android.app;
 
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.keepbit.android.lib.utils.NetworkUtil;
 import com.keepbit.android.lib.utils.TelephonyUtil;
 
 public class ActivityMain extends AppCompatActivity {
@@ -28,5 +30,8 @@ public class ActivityMain extends AppCompatActivity {
 
         String networkOperatorName = TelephonyUtil.getNetworkOperatorName(this);
         Log.e(" ******* CoderMario ", String.format("networkOperatorName = %s", networkOperatorName));
+
+        NetworkInfo networkInfo = NetworkUtil.getActiveNetworkInfo(this);
+        Log.e(" ******* CoderMario ", String.format("%s", 123));
     }
 }

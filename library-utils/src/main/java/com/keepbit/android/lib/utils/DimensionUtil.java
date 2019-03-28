@@ -1,6 +1,7 @@
 package com.keepbit.android.lib.utils;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -18,6 +19,28 @@ public class DimensionUtil {
      * */
     public static DisplayMetrics getDisplayMetrics(@NonNull Context context) {
         return getDisplayMetricsInner(context);
+    }
+
+    /***
+     * Return the absolute width of the available display size in pixels.
+     * */
+    public static int getWidthPixel(Context context) {
+        DisplayMetrics displayMetrics = getDisplayMetricsInner(context);
+        if (null != displayMetrics) {
+            return displayMetrics.widthPixels;
+        }
+        return 0;
+    }
+
+    /***
+     * Return the absolute height of the available display size in pixels.
+     * */
+    public static int getHeightPixel(Context context) {
+        DisplayMetrics displayMetrics = getDisplayMetricsInner(context);
+        if (null != displayMetrics) {
+            return displayMetrics.heightPixels;
+        }
+        return 0;
     }
 
     /**
@@ -71,9 +94,10 @@ public class DimensionUtil {
     /**
      * */
     public static int getStatusBarHeight(@NonNull Context context) {
-        return ResourceUtil.getDimensionPixelOffset(context, "android", "status_bar_height");
+        Resources resources = context.getResources();
+        int identify = resources.getIdentifier("status_bar_height", "dimen", "android");
+        return resources.getDimensionPixelOffset(identify);
     }
-
 
     /**
      * Gets display metrics that describe the size and density of this display.
@@ -82,7 +106,7 @@ public class DimensionUtil {
      * */
     private static DisplayMetrics getDisplayMetricsInner(@NonNull Context context) {
         Object service = context.getSystemService(Context.WINDOW_SERVICE);
-        if (null == service) {
+        if (!(service instanceof WindowManager)) {
             return null;
         }
         WindowManager windowManager = (WindowManager) service;

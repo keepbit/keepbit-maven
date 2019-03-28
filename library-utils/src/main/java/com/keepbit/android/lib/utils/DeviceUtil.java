@@ -1,5 +1,6 @@
 package com.keepbit.android.lib.utils;
 
+import android.hardware.Camera;
 import android.os.Build;
 
 import java.util.UUID;
@@ -8,6 +9,27 @@ import java.util.UUID;
  * Created by CoderMario on 2019-03-27.
  */
 public class DeviceUtil {
+
+    /**
+     * The method used to determine whether the camera is available.
+     * */
+    public static boolean isCameraAvailable() {
+        boolean available = true;
+        Camera camera = null;
+        try {
+            camera = Camera.open();
+            Camera.Parameters parameters = camera.getParameters();
+            camera.setParameters(parameters);
+        } catch (Exception e) {
+            e.printStackTrace();
+            available = false;
+        } finally {
+            if (null != camera) {
+                camera.release();
+            }
+        }
+        return available;
+    }
 
     /***
      * Generates a unique identity for the device.
@@ -19,6 +41,8 @@ public class DeviceUtil {
 
     /***
      * Generates a unique identity for the device.
+     *
+     * {@see <a href="https://github.com/giantray/stackoverflow-java-top-qa/blob/master/contents/is-there-a-unique-android-device-id.md">}
      */
     private static String initUniqueIdentify() {
         String value = "35" + (Build.BOARD.length() % 10) + (Build.BRAND.length() % 10) + (Build.CPU_ABI.length() % 10)
