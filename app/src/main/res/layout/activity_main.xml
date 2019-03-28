@@ -1,9 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:overScrollMode="never" >
 
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical" >
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp" >
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+
+                android:text="网络运营商代号：" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:id="@+id/text_view_01"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+
+                android:text="未知" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:background="#FFF1F1F1"
+            android:layout_height="1px" />
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp" >
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+
+                android:text="网络运营商名称：" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:id="@+id/text_view_02"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+
+                android:text="未知" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
 
