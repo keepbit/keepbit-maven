@@ -4,7 +4,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.telephony.TelephonyManager;
 
-/**
+/***
  * Created by CoderMario on 2019-03-28.
  */
 public class TelephonyUtil {
@@ -63,17 +63,6 @@ public class TelephonyUtil {
             return null;
         }
         return telephonyManager.getSimOperator();
-    }
-
-    /***
-     * Returns a constant indicating the type of activity on a data connection.
-     * */
-    public static int getDataActivity(Context context) {
-        TelephonyManager telephonyManager = getTelephonyManagerInner(context);
-        if (null == telephonyManager) {
-            return 0 - 1;
-        }
-        return telephonyManager.getDataActivity();
     }
 
     /****/

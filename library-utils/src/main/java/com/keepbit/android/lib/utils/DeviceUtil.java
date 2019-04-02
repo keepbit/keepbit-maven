@@ -5,7 +5,7 @@ import android.os.Build;
 
 import java.util.UUID;
 
-/**
+/***
  * Created by CoderMario on 2019-03-27.
  */
 public class DeviceUtil {

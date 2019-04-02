@@ -70,18 +70,100 @@
         </LinearLayout>
 
         <View
-            android:layout_height="32dp"
-            android:layout_width="0dp" />
-
-        <TextView
             android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:background="#FF646456"
-            android:gravity="center"
-            android:textColor="#FFFFFFFF"
-            android:id="@+id/btn"
+            android:background="#FFF1F1F1"
+            android:layout_height="1px" />
 
-            android:text="Button"/>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp" >
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+
+                android:text="Wifi状态：" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:id="@+id/text_view_03"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+
+                android:text="未知" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:background="#FFF1F1F1"
+            android:layout_height="1px" />
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp" >
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+
+                android:text="Mobile状态：" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:id="@+id/text_view_04"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+
+                android:text="未知" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:background="#FFF1F1F1"
+            android:layout_height="1px" />
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp" >
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+
+                android:text="Bluetooth状态：" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:id="@+id/text_view_05"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+
+                android:text="未知" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
 

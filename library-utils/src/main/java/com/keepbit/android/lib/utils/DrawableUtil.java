@@ -6,7 +6,7 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.v4.graphics.drawable.DrawableCompat;
 
-/**
+/***
  * Created by CoderMario on 2019-03-28.
  */
 public class DrawableUtil {

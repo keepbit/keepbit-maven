@@ -17,7 +17,7 @@ import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.List;
 
-/**
+/***
  * Created by CoderMario on 2019-03-27.
  */
 public class PackageUtil {

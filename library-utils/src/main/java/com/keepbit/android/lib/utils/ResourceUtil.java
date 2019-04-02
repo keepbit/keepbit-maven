@@ -13,7 +13,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.util.DisplayMetrics;
 
-/**
+/***
  * Created by CoderMario on 2019-03-27.
  */
 public class ResourceUtil {

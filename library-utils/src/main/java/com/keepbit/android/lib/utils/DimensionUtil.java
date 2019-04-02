@@ -7,7 +7,7 @@ import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.WindowManager;
 
-/**
+/***
  * Created by CoderMario on 2019-03-27.
  */
 public class DimensionUtil {

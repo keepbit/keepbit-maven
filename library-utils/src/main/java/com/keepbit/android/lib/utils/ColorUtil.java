@@ -3,7 +3,7 @@ package com.keepbit.android.lib.utils;
 import android.graphics.Color;
 import android.support.annotation.ColorInt;
 
-/**
+/***
  * Created by CoderMario on 2019-03-28.
  */
 public class ColorUtil {
