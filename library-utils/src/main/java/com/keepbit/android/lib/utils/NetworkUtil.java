@@ -59,26 +59,6 @@ public class NetworkUtil {
 
     /***
      * */
-    public static NetworkInfo getActiveNetworkInfo(Context context, int type) {
-        ConnectivityManager connectivityManager = getConnectivityManagerInner(context);
-        if (null == connectivityManager) {
-            return null;
-        }
-
-        NetworkInfo networkInfo = null;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            Network network = connectivityManager.getActiveNetwork();
-            if (null != network) {
-                networkInfo = connectivityManager.getNetworkInfo(network);
-            }
-        } else {
-            networkInfo = connectivityManager.getActiveNetworkInfo();
-        }
-        return networkInfo;
-    }
-
-    /***
-     * */
     public static boolean isNetworkActive(Context context, int type) {
         ConnectivityManager connectivityManager = getConnectivityManagerInner(context);
         if (null == connectivityManager) {
@@ -98,5 +78,25 @@ public class NetworkUtil {
             return false;
         }
         return type == networkInfo.getType();
+    }
+
+    /***
+     * */
+    public static NetworkInfo getActiveNetworkInfo(Context context) {
+        ConnectivityManager connectivityManager = getConnectivityManagerInner(context);
+        if (null == connectivityManager) {
+            return null;
+        }
+
+        NetworkInfo networkInfo = null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            Network network = connectivityManager.getActiveNetwork();
+            if (null != network) {
+                networkInfo = connectivityManager.getNetworkInfo(network);
+            }
+        } else {
+            networkInfo = connectivityManager.getActiveNetworkInfo();
+        }
+        return networkInfo;
     }
 }
