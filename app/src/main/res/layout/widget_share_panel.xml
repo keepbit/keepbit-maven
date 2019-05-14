@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:clipToPadding="false"
+    android:clipChildren="false" >
+
+    <FrameLayout
+        android:id="@+id/id_weight_share_panel_background"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="#99000000"
+        android:clickable="false" />
+
+    <LinearLayout
+        android:background="@drawable/drawable_share_dialog_bg"
+        android:id="@+id/id_weight_share_panel_container"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:paddingTop="20dp" >
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="#FF999999"
+            android:textSize="10dp"
+
+            android:text="分享至社交" />
+
+        <Space
+            android:layout_height="12dp"
+            android:layout_width="0dp" />
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:clipChildren="false" >
+
+            <Space
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/share_dialog_platform_tab_01_layout"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingRight="8dp"
+                android:paddingLeft="8dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:clipChildren="false"
+                android:clipToPadding="false" >
+
+                <View
+                    android:id="@+id/share_dialog_platform_tab_01_icon"
+                    android:background="@drawable/share_icon_wechat"
+                    android:layout_height="42dp"
+                    android:layout_width="42dp" />
+
+                <Space
+                    android:layout_height="5dp"
+                    android:layout_width="0dp" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="#FF3C3E45"
+                    android:textSize="10dp"
+
+                    android:text="微信好友" />
+            </LinearLayout>
+
+            <Space
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/share_dialog_platform_tab_02_layout"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingRight="8dp"
+                android:paddingLeft="8dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:clipChildren="false"
+                android:clipToPadding="false" >
+
+                <View
+                    android:id="@+id/share_dialog_platform_tab_02_icon"
+                    android:background="@drawable/share_icon_circle"
+                    android:layout_height="42dp"
+                    android:layout_width="42dp" />
+
+                <Space
+                    android:layout_height="5dp"
+                    android:layout_width="0dp" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="#FF3C3E45"
+                    android:textSize="10dp"
+
+                    android:text="朋友圈" />
+            </LinearLayout>
+
+            <Space
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/share_dialog_platform_tab_03_layout"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingRight="8dp"
+                android:paddingLeft="8dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:clipChildren="false"
+                android:clipToPadding="false" >
+
+                <View
+                    android:id="@+id/share_dialog_platform_tab_03_icon"
+                    android:background="@drawable/share_icon_qq"
+                    android:layout_height="42dp"
+                    android:layout_width="42dp" />
+
+                <Space
+                    android:layout_height="5dp"
+                    android:layout_width="0dp" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="#FF3C3E45"
+                    android:textSize="10dp"
+
+                    android:text="QQ好友" />
+            </LinearLayout>
+
+            <Space
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/share_dialog_platform_tab_04_layout"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingRight="8dp"
+                android:paddingLeft="8dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:clipChildren="false"
+                android:clipToPadding="false" >
+
+                <View
+                    android:id="@+id/share_dialog_platform_tab_04_icon"
+                    android:background="@drawable/share_icon_qzone"
+                    android:layout_height="42dp"
+                    android:layout_width="42dp" />
+
+                <Space
+                    android:layout_height="5dp"
+                    android:layout_width="0dp" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="#FF3C3E45"
+                    android:textSize="10dp"
+
+                    android:text="QQ空间" />
+            </LinearLayout>
+
+            <Space
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/share_dialog_platform_tab_05_layout"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingRight="8dp"
+                android:paddingLeft="8dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:clipChildren="false"
+                android:clipToPadding="false" >
+
+                <View
+                    android:id="@+id/share_dialog_platform_tab_05_icon"
+                    android:background="@drawable/share_icon_copy"
+                    android:layout_height="42dp"
+                    android:layout_width="42dp" />
+
+                <Space
+                    android:layout_height="5dp"
+                    android:layout_width="0dp" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="#FF3C3E45"
+                    android:textSize="10dp"
+
+                    android:text="复制链接" />
+            </LinearLayout>
+
+            <Space
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Space
+            android:layout_height="10dp"
+            android:layout_width="0dp" />
+
+        <View
+            android:background="#FFF1F1F1"
+            android:layout_width="match_parent"
+            android:layout_height="1px" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:textColor="#FF333333"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:textSize="13dp"
+
+            android:text="取消分享" />
+    </LinearLayout>
+</FrameLayout>

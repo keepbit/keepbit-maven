@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/white"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+
+    tools:layout_gravity="center" >
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical" >
+
+        <View
+            android:background="@drawable/drawable_avatar_default"
+            android:layout_height="36dp"
+            android:layout_width="36dp" />
+
+        <Space
+            android:layout_height="0dp"
+            android:layout_width="12dp" />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:includeFontPadding="false"
+            android:textColor="#FF666666"
+            android:textSize="14dp"
+
+            android:text="KeepBit" />
+
+        <Space
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:includeFontPadding="false"
+            android:textColor="#FF999999"
+            android:textSize="11dp"
+
+            android:text="1 minute ago" />
+    </LinearLayout>
+
+    <Space
+        android:layout_height="16dp"
+        android:layout_width="0dp" />
+    
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textColor="#FF333333"
+        android:paddingRight="96dp"
+        android:textSize="14dp"
+        
+        android:text="千山鸟飞绝，万径人踪灭。孤舟蓑笠翁，独钓寒江雪。"  />
+
+    <Space
+        android:layout_height="8dp"
+        android:layout_width="0dp" />
+    
+    <View
+        android:background="@drawable/drawable_cover_default"
+        android:layout_width="match_parent"
+        android:layout_height="196dp" />
+
+    <Space
+        android:layout_height="12dp"
+        android:layout_width="0dp" />
+    
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <Space
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_weight="4" />
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/item_tools_btn_01"
+            android:gravity="bottom" >
+            
+            <View
+                android:background="@drawable/index_icon_funny_unsel"
+                android:layout_height="18dp"
+                android:layout_width="18dp" />
+            
+            <Space
+                android:layout_height="0dp"
+                android:layout_width="6dp" />
+            
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:includeFontPadding="false"
+                android:textColor="#FFCCCCCC"
+                android:textSize="10dp" 
+                
+                android:text="喜欢" />
+        </LinearLayout>
+        
+        <Space
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_weight="16" />
+        
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/item_tools_btn_02"
+            android:gravity="bottom" >
+
+            <View
+                android:background="@drawable/index_icon_comment"
+                android:layout_height="18dp"
+                android:layout_width="18dp" />
+
+            <Space
+                android:layout_height="0dp"
+                android:layout_width="6dp" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:includeFontPadding="false"
+                android:textColor="#FFCCCCCC"
+                android:textSize="10dp"
+
+                android:text="评论" />
+        </LinearLayout>
+
+        <Space
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_weight="16" />
+        
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/item_tools_btn_03"
+            android:gravity="bottom" >
+
+            <View
+                android:background="@drawable/index_icon_share"
+                android:layout_height="18dp"
+                android:layout_width="18dp" />
+
+            <Space
+                android:layout_height="0dp"
+                android:layout_width="6dp" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:includeFontPadding="false"
+                android:textColor="#FFCCCCCC"
+                android:textSize="10dp"
+
+                android:text="分享" />
+        </LinearLayout>
+
+        <Space
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_weight="132" />
+        
+        <View
+            android:background="@drawable/index_icon_more"
+            android:id="@+id/item_tools_btn_04"
+            android:layout_height="18dp"
+            android:layout_width="18dp" />
+
+        <Space
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_weight="4" />
+    </LinearLayout>
+</LinearLayout>

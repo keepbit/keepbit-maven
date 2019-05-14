@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/keepbit-maven.iml" filepath="$PROJECT_DIR$/keepbit-maven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library-dialog/library-dialog.iml" filepath="$PROJECT_DIR$/library-dialog/library-dialog.iml" />
       <module fileurl="file://$PROJECT_DIR$/library-utils/library-utils.iml" filepath="$PROJECT_DIR$/library-utils/library-utils.iml" />
     </modules>
   </component>

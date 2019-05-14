@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="keep_bit_res_anim_dialog_input_method">
+        <item name="android:windowEnterAnimation">@anim/keep_bit_res_anim_dialog_input_method_enter</item>
+        <item name="android:windowExitAnimation">@anim/keep_bit_res_anim_dialog_input_method_exit</item>
+    </style>
+
+    <style name="keep_bit_res_anim_dialog_fade">
+        <item name="android:windowEnterAnimation">@anim/keep_bit_res_anim_dialog_fade_enter</item>
+        <item name="android:windowExitAnimation">@anim/keep_bit_res_anim_dialog_fade_exit</item>
+    </style>
+</resources>

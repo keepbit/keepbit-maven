@@ -1,11 +1,24 @@
 <resources>
-
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+    <style name="KeepBitTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="anim_dialog_input_method">
+        <item name="android:windowEnterAnimation">@anim/anim_dialog_input_method_enter</item>
+        <item name="android:windowExitAnimation">@anim/anim_dialog_input_method_exit</item>
+    </style>
+
+    <style name="anim_dialog_fade_f">
+        <item name="android:windowEnterAnimation">@anim/anim_dialog_f_fade_enter</item>
+        <item name="android:windowExitAnimation">@anim/anim_dialog_f_fade_exit</item>
+    </style>
+
+    <style name="anim_dialog_fade_t">
+        <item name="android:windowEnterAnimation">@anim/anim_dialog_t_fade_enter</item>
+        <item name="android:windowExitAnimation">@anim/anim_dialog_t_fade_exit</item>
+    </style>
 </resources>
