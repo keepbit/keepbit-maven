@@ -32,16 +32,32 @@ public class ShareFramePanel extends FrameLayout {
     public final static int STATE_SHOW_ING = 4; //
     public final static int STATE_SHOW_ED = 8; //
 
+    private final long mTargetShowAnimatorDurationDiff = 42L; // 进入
+    private final long mTargetHideAnimatorDurationDiff = 35L; // 退出
+
+    private final long mTargetShowAnimatorDelayDiff = 80L; // 进入
+    private final long mTargetHideAnimatorDelayDiff = 60L; // 退出
+
+    private final long mTargetShowAnimatorDurationMax = 640L; // 进入
+    private final long mTargetHideAnimatorDurationMax = 560L; // 退出
+
+    private final long mContainerShowAnimatorDuration = 360L; // 进入
+    private final long mContainerHideAnimatorDuration = 360L; // 退出
+
+    private final long mContainerShowAnimatorDelay = 100L; // 进入
+    private final long mContainerHideAnimatorDelay = 320L; // 退出
+
+    private int mTargetMaxOffsetY = 480;
+    private int mTargetMinOffsetY = 0 - 240;
+    private int mTargetOffsetYDiff = 24;
+
     private int mState = STATE_HIDE_ED;
 
     private LinearLayout mLinearLayoutContainer;
     private FrameLayout mFrameLayoutBackground;
 
-    private View mPlatformTabIcon01;
-    private View mPlatformTabIcon02;
-    private View mPlatformTabIcon03;
-    private View mPlatformTabIcon04;
-    private View mPlatformTabIcon05;
+    private View mPlatformTabIcon01, mPlatformTabIcon02, mPlatformTabIcon03
+            , mPlatformTabIcon04, mPlatformTabIcon05;
 
     private View[] mTargets = null;
 
@@ -60,34 +76,46 @@ public class ShareFramePanel extends FrameLayout {
     private void initShareFramePanel() {
         LayoutInflater.from(getContext()).inflate(R.layout.widget_share_panel, this, true);
 
-        mFrameLayoutBackground = findViewById(R.id.id_weight_share_panel_background);
-        mLinearLayoutContainer = findViewById(R.id.id_weight_share_panel_container);
+        this.mFrameLayoutBackground = findViewById(R.id.id_weight_share_panel_background);
+        this.mLinearLayoutContainer = findViewById(R.id.id_weight_share_panel_container);
 
-        mFrameLayoutBackground.setOnClickListener(new OutsideClickListener());
-        mLinearLayoutContainer.setOnClickListener(new ContainerClickListener());
+        this.mFrameLayoutBackground.setOnClickListener(new OutsideClickListener());
+        this.mLinearLayoutContainer.setOnClickListener(new ContainerClickListener());
 
-        mPlatformTabIcon01 = findViewById(R.id.share_dialog_platform_tab_01_icon);
-        mPlatformTabIcon02 = findViewById(R.id.share_dialog_platform_tab_02_icon);
-        mPlatformTabIcon03 = findViewById(R.id.share_dialog_platform_tab_03_icon);
-        mPlatformTabIcon04 = findViewById(R.id.share_dialog_platform_tab_04_icon);
-        mPlatformTabIcon05 = findViewById(R.id.share_dialog_platform_tab_05_icon);
+        this.mPlatformTabIcon01 = findViewById(R.id.share_dialog_platform_tab_01_icon);
+        this.mPlatformTabIcon02 = findViewById(R.id.share_dialog_platform_tab_02_icon);
+        this.mPlatformTabIcon03 = findViewById(R.id.share_dialog_platform_tab_03_icon);
+        this.mPlatformTabIcon04 = findViewById(R.id.share_dialog_platform_tab_04_icon);
+        this.mPlatformTabIcon05 = findViewById(R.id.share_dialog_platform_tab_05_icon);
 
-        mTargets = new View[] {mPlatformTabIcon01, mPlatformTabIcon02, mPlatformTabIcon03
+        this.mTargets = new View[] {mPlatformTabIcon01, mPlatformTabIcon02, mPlatformTabIcon03
                 , mPlatformTabIcon04, mPlatformTabIcon05};
     }
 
-    public void attach(View view) {
+    public void attachDecorView(View view) {
         if (view instanceof ViewGroup) {
             this.mViewGroup = (ViewGroup) view;
         }
     }
 
     public void show() {
-        prepareShow();
-        initShowAnimator();
+        showInner();
+    }
+
+    private void showInner() {
+        if (STATE_HIDE_ED == mState) {
+            prepareShow();
+            initShowAnimator();
+        }
     }
 
     public void hide() {
+        if (STATE_SHOW_ED == mState) {
+            hideInner();
+        }
+    }
+
+    private void hideInner() {
         initHideAnimator();
     }
 
@@ -164,11 +192,11 @@ public class ShareFramePanel extends FrameLayout {
     }
 
     private void dispatchOnShowAnimationStart() {
-        this.mPlatformTabIcon01.setTranslationY(480);
-        this.mPlatformTabIcon02.setTranslationY(480);
-        this.mPlatformTabIcon03.setTranslationY(480);
-        this.mPlatformTabIcon04.setTranslationY(480);
-        this.mPlatformTabIcon05.setTranslationY(480);
+        this.mPlatformTabIcon01.setTranslationY(mTargetMaxOffsetY);
+        this.mPlatformTabIcon02.setTranslationY(mTargetMaxOffsetY);
+        this.mPlatformTabIcon03.setTranslationY(mTargetMaxOffsetY);
+        this.mPlatformTabIcon04.setTranslationY(mTargetMaxOffsetY);
+        this.mPlatformTabIcon05.setTranslationY(mTargetMaxOffsetY);
 
         this.mFrameLayoutBackground.setAlpha(0.f);
         this.mLinearLayoutContainer.setTranslationY(this.mLinearLayoutContainer.getHeight());
@@ -210,8 +238,8 @@ public class ShareFramePanel extends FrameLayout {
         animator.setTarget(this.mLinearLayoutContainer);
         animator.setFloatValues(this.mLinearLayoutContainer.getHeight(), 0);
         animator.setInterpolator(new DecelerateInterpolator(0.6f));
-        animator.setDuration(360);
-        animator.setStartDelay(100);
+        animator.setDuration(mContainerShowAnimatorDuration);
+        animator.setStartDelay(mContainerShowAnimatorDelay);
         return animator;
     }
 
@@ -221,8 +249,8 @@ public class ShareFramePanel extends FrameLayout {
         animator.setTarget(this.mFrameLayoutBackground);
         animator.setFloatValues(0.f, 1.f);
         animator.setInterpolator(new DecelerateInterpolator(0.6f));
-        animator.setDuration(360);
-        animator.setStartDelay(100);
+        animator.setDuration(mContainerShowAnimatorDuration);
+        animator.setStartDelay(mContainerShowAnimatorDelay);
         return animator;
     }
 
@@ -232,8 +260,8 @@ public class ShareFramePanel extends FrameLayout {
         animator.setTarget(this.mLinearLayoutContainer);
         animator.setFloatValues(0, this.mLinearLayoutContainer.getHeight());
         animator.setInterpolator(new DecelerateInterpolator(0.6f));
-        animator.setDuration(360);
-        animator.setStartDelay(320);
+        animator.setDuration(mContainerHideAnimatorDuration);
+        animator.setStartDelay(mContainerHideAnimatorDelay);
         return animator;
     }
 
@@ -243,8 +271,8 @@ public class ShareFramePanel extends FrameLayout {
         animator.setTarget(this.mFrameLayoutBackground);
         animator.setFloatValues(1.f, 0.f);
         animator.setInterpolator(new DecelerateInterpolator(0.6f));
-        animator.setDuration(360);
-        animator.setStartDelay(320);
+        animator.setDuration(mContainerHideAnimatorDuration);
+        animator.setStartDelay(mContainerHideAnimatorDelay);
         return animator;
     }
 
@@ -252,10 +280,10 @@ public class ShareFramePanel extends FrameLayout {
         ObjectAnimator animator = new ObjectAnimator();
         animator.setProperty(View.TRANSLATION_Y);
         animator.setTarget(target);
-        animator.setFloatValues(480, 0 - 240 + 24 * index, 0);
+        animator.setFloatValues(mTargetMaxOffsetY, mTargetMinOffsetY + mTargetOffsetYDiff * index, 0);
         animator.setInterpolator(new DecelerateInterpolator(0.6f));
-        animator.setDuration(640 - 42 * index);
-        animator.setStartDelay(81 * index);
+        animator.setDuration(mTargetShowAnimatorDurationMax - index * mTargetShowAnimatorDurationDiff);
+        animator.setStartDelay(index * mTargetShowAnimatorDelayDiff);
         return animator;
     }
 
@@ -263,10 +291,10 @@ public class ShareFramePanel extends FrameLayout {
         ObjectAnimator animator = new ObjectAnimator();
         animator.setProperty(View.TRANSLATION_Y);
         animator.setTarget(target);
-        animator.setFloatValues(0, 0 - 240 + 24 * (4 - index), 480);
+        animator.setFloatValues(0, mTargetMinOffsetY + mTargetOffsetYDiff * (mTargets.length - 1 - index), mTargetMaxOffsetY);
         animator.setInterpolator(new AccelerateInterpolator(0.6f));
-        animator.setDuration(560 - 35 * index);
-        animator.setStartDelay(index * 60L);
+        animator.setDuration(mTargetHideAnimatorDurationMax - index * mTargetHideAnimatorDurationDiff);
+        animator.setStartDelay(index * mTargetHideAnimatorDelayDiff);
         return animator;
     }
 
@@ -274,7 +302,7 @@ public class ShareFramePanel extends FrameLayout {
 
         @Override
         public void onClick(View view) {
-            hide();
+            hideInner();
         }
     }
 

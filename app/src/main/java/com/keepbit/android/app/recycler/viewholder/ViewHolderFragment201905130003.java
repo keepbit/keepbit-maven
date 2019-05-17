@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import com.keepbit.android.app.R;
 import com.keepbit.android.app.event.Fragment201905130003MoreEvent;
-import com.keepbit.android.app.event.ShareEvent;
+import com.keepbit.android.app.event.Fragment201905130003ShareEvent;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -16,24 +16,14 @@ import org.greenrobot.eventbus.EventBus;
  */
 public class ViewHolderFragment201905130003 extends RecyclerView.ViewHolder {
 
-    private View mLinearLayoutBtn01, mLinearLayoutBtn02, mLinearLayoutBtn03, mLinearLayoutBtn04;
-
     public ViewHolderFragment201905130003(LayoutInflater layoutInflater, ViewGroup parent) {
         super(layoutInflater.inflate(R.layout.item_fragment_201905130003, parent, false));
 
-        mLinearLayoutBtn01 = itemView.findViewById(R.id.item_tools_btn_01);
-        mLinearLayoutBtn02 = itemView.findViewById(R.id.item_tools_btn_02);
-        mLinearLayoutBtn03 = itemView.findViewById(R.id.item_tools_btn_03);
-        mLinearLayoutBtn04 = itemView.findViewById(R.id.item_tools_btn_04);
-
-
-        mLinearLayoutBtn01.setOnClickListener(new Btn01ClickListener());
-        mLinearLayoutBtn02.setOnClickListener(new Btn02ClickListener());
-        mLinearLayoutBtn03.setOnClickListener(new Btn03ClickListener());
-        mLinearLayoutBtn04.setOnClickListener(new Btn04ClickListener());
+        itemView.findViewById(R.id.item_tools_btn_01).setOnClickListener(new Btn01ClickListener());
+        itemView.findViewById(R.id.item_tools_btn_02).setOnClickListener(new Btn02ClickListener());
+        itemView.findViewById(R.id.item_tools_btn_03).setOnClickListener(new Btn03ClickListener());
+        itemView.findViewById(R.id.item_tools_btn_04).setOnClickListener(new Btn04ClickListener());
     }
-
-
 
     private class Btn01ClickListener implements View.OnClickListener {
 
@@ -55,7 +45,7 @@ public class ViewHolderFragment201905130003 extends RecyclerView.ViewHolder {
 
         @Override
         public void onClick(View view) {
-            ShareEvent event = new ShareEvent();
+            Fragment201905130003ShareEvent event = new Fragment201905130003ShareEvent();
             EventBus.getDefault().post(event);
         }
     }

@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.keepbit.android.app.R;
 import com.keepbit.android.app.dialog.Fragment201905130003DialogMore;
 import com.keepbit.android.app.event.Fragment201905130003MoreEvent;
-import com.keepbit.android.app.event.ShareEvent;
+import com.keepbit.android.app.event.Fragment201905130003ShareEvent;
 import com.keepbit.android.app.recycler.ItemDecorationFragment201905130003;
 import com.keepbit.android.app.recycler.adapter.AdapterFragment201905130003;
 import com.keepbit.android.app.widget.ShareFramePanel;
@@ -64,10 +64,10 @@ public class Fragment201905130003 extends BaseFragmentV4 {
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onReceiveEvent(ShareEvent event) {
+    public void onReceiveEvent(Fragment201905130003ShareEvent event) {
         if (null == mShareFramePanel) {
             mShareFramePanel = new ShareFramePanel(getContext());
-            mShareFramePanel.attach(getActivity().getWindow().getDecorView());
+            mShareFramePanel.attachDecorView(getActivity().getWindow().getDecorView());
         }
         mShareFramePanel.show();
     }

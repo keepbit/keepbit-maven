@@ -5,7 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.keepbit.android.app.fragment.BaseFragmentV4;
-import com.keepbit.android.app.fragment.Fragment201905130003;
+import com.keepbit.android.app.fragment.Fragment201905150001;
+import com.keepbit.android.app.fragment.Fragment201905160001;
 
 public class ActivityMain extends AppCompatActivity {
 
@@ -16,7 +17,7 @@ public class ActivityMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mBaseFragmentV4 = Fragment201905130003.newInstance(null);
+        mBaseFragmentV4 = Fragment201905150001.newInstance(null);
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.fragment_container, mBaseFragmentV4);

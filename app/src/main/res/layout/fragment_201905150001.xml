@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 用户个人信息存读取 -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center" >
+
+    <TextView
+        android:id="@+id/user_storage_write"
+        android:background="#FFF5F5F5"
+        android:textColor="#FF333333"
+        android:layout_height="42dp"
+        android:layout_width="196dp"
+        android:gravity="center"
+
+        android:text="写入用户个人信息" />
+
+    <Space
+        android:layout_height="12dp"
+        android:layout_width="0dp" />
+
+    <TextView
+        android:id="@+id/user_storage_read"
+        android:background="#FFF5F5F5"
+        android:textColor="#FF333333"
+        android:layout_height="42dp"
+        android:layout_width="196dp"
+        android:gravity="center"
+
+        android:text="读取用户个人信息" />
+</LinearLayout>
+
+
